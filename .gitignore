@@ -1,0 +1,6 @@
+# Archivos locales del IDE DataFlex
+IdeSrc/Workspace.loc
+
+# Archivos temporales
+*.tmp
+*.log
