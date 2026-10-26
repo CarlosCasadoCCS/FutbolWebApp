@@ -4,3 +4,9 @@ IdeSrc/Workspace.loc
 # Archivos temporales
 *.tmp
 *.log
+
+# Archivos temporales y caché de DataFlex
+Data/*.cch
+
+# Ejecutable generado por DataFlex
+Programs/WebApp.exe
