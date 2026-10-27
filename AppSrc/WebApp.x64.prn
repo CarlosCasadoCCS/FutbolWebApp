@@ -1,5 +1,5 @@
 Compiling Program: C:\DataFlex Projects\FutbolWebApp\AppSrc\WebApp.src
-Memory Available: 16914006016
+Memory Available: 19554168832
 1>Use AllWebAppClasses.pkg
 Using pre-compiled package ALLWEBAPPCLASSES.PKG
 Including file: AllWebAppClasses.x64.pkd    (C:\Program Files\DataFlex 25.0\Pkg\AllWebAppClasses.x64.pkd)
@@ -127,7 +127,7 @@ Including file: LoginEncryptionKey.inc    (C:\DataFlex Projects\FutbolWebApp\App
 36367>End_Object
 36368>
 36368>Object oWebApp is a cWebApp
-36370>    Set psTheme to "Df_Material"
+36370>    Set psTheme to "Verde"
 36371>    Set peAlignView to alignCenter
 36372>    
 36372>    // It is important to set this so that all views will default
@@ -1544,7 +1544,7 @@ Including file: Dashboard.wo    (C:\DataFlex Projects\FutbolWebApp\AppSrc\Dashbo
 37437>>>            Object oTile5 is a cWebHtmlBox
 37439>>>                Set pbServerOnClick to True
 37440>>>                Set piColumnSpan to 6
-37441>>>                Set piColumnIndex to 6
+37441>>>                Set piColumnIndex to 0
 37442>>>                Set psCSSClass to "Tile DarkAlternate"
 37443>>>                Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview"><div Class="Tile_Title">Equipo</div><div class="Tile_Subtitle"></div></div>'
 37444>>>            
@@ -3361,7 +3361,7 @@ Including file: SelectLiga.wo    (C:\DataFlex Projects\FutbolWebApp\AppSrc\Selec
 38978>Send StartWebApp of oWebApp
 38979>
 Summary
-Memory Available: 16900984832
+Memory Available: 19560783872
 Total Warnings : 0
 Total Errors   : 0
 Total Symbols  : 25605
@@ -3369,6 +3369,6 @@ Total Resources: 0
 Total Commands : 38978
 Total Windows  : 0
 Total Pages    : 0
-Static Data    : 483721
+Static Data    : 483717
 Message area   : 261203
 Total Blocks   : 17293
