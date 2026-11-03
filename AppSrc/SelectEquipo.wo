@@ -9,6 +9,8 @@ Use cWebMenuItem.pkg
 Use cWebColumnButton.pkg
 Use cWebColumn.pkg
 Use ZoomEquipo.wo
+Use SelectEquipo.wo
+Use SelectLiga.wo
 
 Use cligaDataDictionary.dd
 Use cequipoDataDictionary.dd
@@ -96,6 +98,13 @@ Object oSelectEquipo is a cWebView
             Move True to NavigateData.bReadOnly
         End_Procedure
 
+        Procedure OnGetNavigateBackData tWebNavigateData  ByRef NavigateData Handle hoBackToView
+            Forward Send OnGetNavigateBackData (&NavigateData) hoBackToView
+            Send ShowInfoBox "a punto de volver"
+        End_Procedure
+        
+        
+
     End_Object 
 
     Object oActionGroup is a cWebMenuGroup
@@ -135,11 +144,13 @@ Object oSelectEquipo is a cWebView
             Case (NavigateData.eNavigateType = nfFromParent)
                 // If from parent, this is a constrained drill down
                 // If Row select does main-zoom we don't need this
+                Send ShowInfoBox "Vengo de un padre"
                 WebSet pbRender of oDetailButton to False
                 Case Break
 
             Case (NavigateData.eNavigateType = nfFromChild)
                 // If from child, this is a probably a parent lookup from a Zoom
+                Send ShowInfoBox "Vengo de un hijo"
                 Case Break
 
             Case (NavigateData.eNavigateType = nfFromMain)

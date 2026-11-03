@@ -63,11 +63,13 @@ Object oSelectEntrenador is a cWebView
             WebRegisterPath ntNavigateForward oZoomEntrenador
 
             Procedure OnClick
+                
                 Send NavigatePath
             End_Procedure
 
             Procedure OnGetNavigateForwardData tWebNavigateData ByRef NavigateData Handle hoToView
                 Move True to NavigateData.bReadOnly
+                
             End_Procedure
 
         End_Object 
@@ -88,10 +90,12 @@ Object oSelectEntrenador is a cWebView
                     Case Break
 
                 Case (NavigateData.eNavigateType = nfFromMain)
+                    
                     Send NavigateClose Self
                     Case Break
 
                 Case Else // must be nfUndefined
+                    Send ShowInfoBox "Saliendo de SelectEntrenador a zoom"
                     Send NavigateForward of oZoomEntrenador Self
 
             Case End
@@ -140,21 +144,26 @@ Object oSelectEntrenador is a cWebView
             Case (NavigateData.eNavigateType = nfFromParent)
                 // If from parent, this is a constrained drill down
                 // If Row select does main-zoom we don't need this
+                
                 WebSet pbRender of oDetailButton to False
                 Case Break
 
             Case (NavigateData.eNavigateType = nfFromChild)
                 // If from child, this is a probably a parent lookup from a Zoom
+                
+                
                 Case Break
 
             Case (NavigateData.eNavigateType = nfFromMain)
                 // If from main, this is a probably a main-file lookup from a Zoom
+                
                 WebSet pbRender of oDetailButton to False
                 Case Break
 
             Case Else // must be nfUndefined
                 // This may be the start of a drilldown query or this may be used for some kind of custom query.
                 // If Row select does main-zoom we don't need this
+                
                 WebSet pbRender of oDetailButton to False
 
         Case End
