@@ -135,6 +135,16 @@ Object oZoomPosicion is a cWebView
             Case Else // must be nfUndefined
 
         Case End
+        
+        If (HasRecord(Server(Self))) Begin
+            Send SetHeaderCaption ("Posicion:" *posicion.Nombre)
+            Send SetBreadcrumbCaption (posicion.Nombre)
+        End
+        Else Begin
+            Send SetHeaderCaption ("Nueva Posicion")
+            Send SetBreadcrumbCaption ("Nueva")
+        End
+
 
         Send SetActionButtons
 
