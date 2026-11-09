@@ -143,6 +143,14 @@ Object oZoomEquipo is a cWebView
         Case Begin
             Case (NavigateData.eNavigateType = nfFromMain)
                 // If from main, this is a propbably a main file Select to Zoom.
+                String sValue
+                Get NamedValueGet NavigateData.NamedValues "Origen" to sValue
+                If (sValue="Detail") Begin
+                    Send ShowInfoBox "Vengo del boton detail"
+                End
+                Else Begin
+                    Send ShowInfoBox "Vengo del boton row"
+                End
                 Case Break
 
             Case (NavigateData.eNavigateType = nfFromParent)
