@@ -8,6 +8,7 @@ Use cWebMenuGroup.pkg
 Use cWebMenuItem.pkg
 Use cWebForm.pkg
 Use cWebCombo.pkg
+Use cWebButton.pkg
 
 Use cligaDataDictionary.dd
 Use cequipoDataDictionary.dd
@@ -120,6 +121,28 @@ Object oZoomEntrenador is a cWebView
             
             
         End_Object 
+        
+        Object oDespedirButton is a cWebButton
+            Set psCaption to "Despedir"
+        
+            Procedure OnClick
+                Boolean bHasRecord
+        
+                Get HasRecord of oentrenador_DD to bHasRecord
+        
+                If (bHasRecord) Begin
+        
+                    // Indicamos que EquipoID debe ser NULL
+                    Set_Attribute DF_FIELD_IS_NULL of entrenador.File_Number ;
+                        (RefTable(entrenador.EquipoID)) to True
+        
+                    // Guardamos el registro
+                    Send Request_Save of oentrenador_DD
+        
+                End
+            End_Procedure
+        End_Object
+        
     End_Object 
 
     Object oActionGroup is a cWebMenuGroup

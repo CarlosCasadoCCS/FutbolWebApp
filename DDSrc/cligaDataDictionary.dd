@@ -28,5 +28,7 @@ Class cligaDataDictionary is a DataDictionary
         Set Foreign_Field_Option DD_DEFAULT DD_DISPLAYONLY to True
 
     End_Procedure
+    
+    
 
 End_Class
