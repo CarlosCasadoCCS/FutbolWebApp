@@ -7,7 +7,7 @@ GroupCount=1
 HorizontalGroups=1
 [TabGroup0]
 GroupSize=40
-SelectedTab=9
+SelectedTab=7
 [Window0]
 Filename=Workspace Dashboard
 ViewType=101
@@ -29,83 +29,6 @@ CursorColumn=25
 TabIndex=1
 TabGroup=0
 [Window2]
-Filename=C:\DataFlex Projects\FutbolWebApp\AppSrc\Dashboard.wo
-ViewType=1
-Top=26
-Left=0
-Bottom=613
-Right=1317
-CursorLine=63
-CursorColumn=18
-TabIndex=2
-TabGroup=0
-[Window3]
-Filename=C:\DataFlex Projects\FutbolWebApp\AppSrc\SelectEntrenador.wo
-ViewType=1
-Top=26
-Left=0
-Bottom=613
-Right=1317
-CursorLine=120
-CursorColumn=0
-TabIndex=3
-TabGroup=0
-[Window4]
-Filename=C:\DataFlex Projects\FutbolWebApp\AppSrc\ZoomEntrenador.wo
-ViewType=1
-Top=26
-Left=0
-Bottom=613
-Right=1317
-CursorLine=89
-CursorColumn=12
-TabIndex=4
-TabGroup=0
-[Window5]
-Filename=C:\DataFlex Projects\FutbolWebApp\AppSrc\SelectEquipo.wo
-ViewType=1
-Top=26
-Left=0
-Bottom=613
-Right=1317
-CursorLine=132
-CursorColumn=0
-TabIndex=5
-TabGroup=0
-[Window6]
-Filename=C:\DataFlex Projects\FutbolWebApp\AppSrc\ZoomJugador.wo
-ViewType=1
-Top=26
-Left=0
-Bottom=613
-Right=1317
-CursorLine=9
-CursorColumn=18
-TabIndex=7
-TabGroup=0
-[Window7]
-Filename=C:\DataFlex Projects\FutbolWebApp\AppSrc\SelectPosicion.wo
-ViewType=1
-Top=26
-Left=0
-Bottom=613
-Right=1317
-CursorLine=147
-CursorColumn=69
-TabIndex=8
-TabGroup=0
-[Window8]
-Filename=C:\DataFlex Projects\FutbolWebApp\AppSrc\ZoomLiga.wo
-ViewType=1
-Top=26
-Left=0
-Bottom=613
-Right=1317
-CursorLine=24
-CursorColumn=31
-TabIndex=6
-TabGroup=0
-[Window9]
 Filename=C:\DataFlex Projects\FutbolWebApp\DDSrc\cligaDataDictionary.dd
 ViewType=1
 Top=26
@@ -114,5 +37,67 @@ Bottom=613
 Right=1317
 CursorLine=13
 CursorColumn=33
-TabIndex=9
+TabIndex=2
+TabGroup=0
+[Window3]
+Filename=C:\DataFlex Projects\FutbolWebApp\DDSrc\centrenadorDataDictionary.dd
+ViewType=1
+Top=26
+Left=0
+Bottom=613
+Right=1317
+CursorLine=0
+CursorColumn=0
+TabIndex=3
+TabGroup=0
+[Window4]
+Filename=C:\DataFlex Projects\FutbolWebApp\DDSrc\cequipoDataDictionary.dd
+ViewType=1
+Top=26
+Left=0
+Bottom=613
+Right=1317
+CursorLine=0
+CursorColumn=0
+TabIndex=4
+TabGroup=0
+[Window5]
+Filename=C:\DataFlex Projects\FutbolWebApp\DDSrc\cjugadorDataDictionary.dd
+ViewType=1
+Top=26
+Left=0
+Bottom=613
+Right=1317
+CursorLine=0
+CursorColumn=0
+TabIndex=5
+TabGroup=0
+[Window6]
+Filename=C:\DataFlex Projects\FutbolWebApp\DDSrc\cposicionDataDictionary.dd
+ViewType=1
+Top=26
+Left=0
+Bottom=613
+Right=1317
+CursorLine=13
+CursorColumn=21
+TabIndex=6
+TabGroup=0
+[Window7]
+Filename=CodeType
+ViewType=4
+Top=26
+Left=0
+Bottom=613
+Right=1317
+TabIndex=8
+TabGroup=0
+[Window8]
+Filename=CodeMast
+ViewType=4
+Top=26
+Left=0
+Bottom=613
+Right=1317
+TabIndex=7
 TabGroup=0

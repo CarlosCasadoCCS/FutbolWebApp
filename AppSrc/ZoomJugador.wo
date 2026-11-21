@@ -7,6 +7,7 @@ Use cWebPanel.pkg
 Use cWebMenuGroup.pkg
 Use cWebMenuItem.pkg
 Use cWebForm.pkg
+Use cWebCombo.pkg
 Use SelectPosicion.wo
 
 Use cligaDataDictionary.dd
@@ -62,7 +63,7 @@ Object oZoomJugador is a cWebView
             End_Object 
         End_Object 
 
-        Object ojugadorNacionalidad is a cWebForm
+        Object ojugadorNacionalidad is a cWebCombo
             Entry_Item jugador.Nacionalidad
             Set piColumnSpan to 10
             Set piColumnIndex to 0
