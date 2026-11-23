@@ -3,11 +3,53 @@
 Open entrenador
 Open equipo
 
+
+Open entrenador2
+
+Set_Attribute DF_FILE_ALIAS of entrenador.File_Number to DF_FILE_IS_MASTER
+Set_Attribute DF_FILE_ALIAS of entrenador2.File_Number to DF_FILE_IS_ALIAS
+
 Object oNacionalidadVT is a CodeValidationTable
     Set Type_Value to "NACION"
 End_Object
 
 Class centrenadorDataDictionary is a DataDictionary
+    
+    Function ValidarEquipo Integer iField Number nValue Returns Integer
+        Integer iEquipoActual
+        Integer iEntrenadorActual
+    
+        // Obtener el ID del equipo seleccionado en el DDO padre
+        Get File_Field_Current_Value File_Field equipo.ID to iEquipoActual
+    
+        // Si no hay equipo seleccionado, permitir guardar
+        If (iEquipoActual = 0) Begin
+            Function_Return 0
+        End
+    
+        // Obtener el ID del entrenador que estamos editando
+        Get Field_Current_Value Field entrenador.ID to iEntrenadorActual
+    
+        // Buscar si otro entrenador ya tiene asignado ese equipo
+        Move iEquipoActual to entrenador2.EquipoID
+        Find EQ entrenador2 by Index.3
+    
+        If (Found) Begin
+            // Si el entrenador encontrado es otro, impedir el guardado
+            If (entrenador2.ID <> iEntrenadorActual) Begin
+                Send UserError ;
+                    "No se puede asignar este equipo porque ya tiene un entrenador."
+    
+                Function_Return 1
+            End
+        End
+    
+        Function_Return 0
+    End_Function
+    
+    
+    
+   
     
     Procedure Construct_Object
         Forward Send Construct_Object
@@ -20,8 +62,8 @@ Class centrenadorDataDictionary is a DataDictionary
         Set Protect_Key_State to True
         Set Key_Field_State Field entrenador.ID to True
         
-        Set Field_Option Field entrenador.Nombre DD_NOENTER to True
-        Set Field_Option Field entrenador.Apellido DD_NOENTER to True
+        Set Field_Option Field entrenador.Nombre DD_COMMIT to True
+        Set Field_Option Field entrenador.Apellido DD_COMMIT to True
         
         Set Field_Option Field entrenador.ID DD_REQUIRED to True
         Set Field_Option Field entrenador.Nombre DD_REQUIRED to True
@@ -34,9 +76,13 @@ Class centrenadorDataDictionary is a DataDictionary
         
         Set ParentNullAllowed equipo.File_Number to True
         
+        Set Field_Validate_msg Field entrenador.EquipoID to (RefFunc(ValidarEquipo))
+        
         
 
     End_Procedure
+    
+    
     
     Procedure Attach_Main_File
 
