@@ -68,6 +68,17 @@
 			</DDClasses>
 		</Table>
 		<Table>
+			<tableNumber>7</tableNumber>
+			<tableName>entrenador2</tableName>
+			<DDClasses>
+				<DDClass>
+					<className>centrenador2DataDictionary</className>
+					<classFile>centrenador2DataDictionary.dd</classFile>
+					<preferred>true</preferred>
+				</DDClass>
+			</DDClasses>
+		</Table>
+		<Table>
 			<tableNumber>263</tableNumber>
 			<tableName>WebAppSession</tableName>
 			<DDClasses>

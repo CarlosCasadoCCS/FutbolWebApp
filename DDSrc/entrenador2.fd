@@ -1,0 +1,7 @@
+#REPLACE FILE7 entrenador2
+#REPLACE entrenador2.File_Number |CI7
+#REPLACE entrenador2.ID |FN7,1
+#REPLACE entrenador2.Nombre |FS7,2
+#REPLACE entrenador2.Apellido |FS7,3
+#REPLACE entrenador2.Nacionalidad |FS7,4
+#REPLACE entrenador2.EquipoID |FN7,5
