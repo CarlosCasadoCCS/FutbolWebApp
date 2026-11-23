@@ -32,8 +32,29 @@ Class centrenadorDataDictionary is a DataDictionary
         Set Foreign_Field_Option DD_INDEXFIELD DD_NOPUT to True
         Set Foreign_Field_Option DD_DEFAULT DD_DISPLAYONLY to True
         
+        Set ParentNullAllowed equipo.File_Number to True
+        
         
 
+    End_Procedure
+    
+    Procedure Attach_Main_File
+
+        // Ejecutar primero el Attach original de DataFlex
+        Forward Send Attach_Main_File
+    
+        // Solo actuar durante un guardado
+        If (Operation_Mode = Mode_Saving) Begin
+    
+            // Si el equipo está vacío, marcar EquipoID como NULL
+            If (equipo.ID = 0) Begin
+    
+                Set_Attribute DF_FIELD_IS_NULL of entrenador.File_Number ;
+                    (RefTable(entrenador.EquipoID)) to True
+    
+            End
+        End
+    
     End_Procedure
 
 End_Class
